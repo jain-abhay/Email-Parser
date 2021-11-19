@@ -1,0 +1,47 @@
+<!-- <html>
+    <body>
+
+        {% for talk in talks%}
+            {{talk.Sender}}&nbsp;&nbsp;{{talk.Topic}}&nbsp;&nbsp;{{talk.Speaker}}&nbsp;&nbsp;{{talk.DateofWorkshop}}&nbsp;&nbsp;{{talk.Time}}
+            <br>
+        {% endfor %}
+    </body>
+</html> -->
+
+
+
+{% load static %}
+<form action="delete" method="POST">
+        <input type="submit" value="DeleteDataBase" 
+        style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">        
+</form>
+<table>
+    <caption> Talks and Workshops DataBase </caption>
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
+    <tr>
+        <th>Sender</th>
+        <th>Topic</th>
+        <th>Speaker</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Venue</th>
+    </tr>
+    {% for talk in talks%}
+    <tr>
+        <td>{{talk.Sender}}</td>
+        <td>{{talk.Topic}}</td>
+        <td>{{talk.Speaker}}</td>
+        <td>{{talk.DateofWorkshop}}</td>
+        <td>{{talk.Time}}</td>
+        <td>{{talk.Venue}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+
+<!-- <form action="download" method="POST">
+        <input type="submit" value="DownloadCSV" 
+        style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">        
+</form> -->
